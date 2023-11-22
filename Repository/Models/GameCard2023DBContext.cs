@@ -39,7 +39,6 @@ namespace Repository.Models
             return strConn;
         }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GameCardInfo>(entity =>

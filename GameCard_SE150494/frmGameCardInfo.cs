@@ -12,12 +12,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GameCard_SE150494
 {
     public partial class frmGameCardInfo : Form
     {
-
         public GameCardInfoService _gameCardService { get; set; }
         public ProviderService _providerService { get; set; }
         public frmGameCardInfo(MemberAccount member)
@@ -94,7 +94,6 @@ namespace GameCard_SE150494
 
         }
 
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -121,6 +120,11 @@ namespace GameCard_SE150494
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtGameCardId.Text))
+            {
+                MessageBox.Show("ID not empty", "Error", MessageBoxButtons.OK);
+                return;
+            }
 
             var gameCard = _gameCardService.GetAll()
                 .Where(p => p.GameCardId.Equals(int.Parse(txtGameCardId.Text))).FirstOrDefault();
@@ -162,14 +166,14 @@ namespace GameCard_SE150494
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtGameCardId.Text) || string.IsNullOrEmpty(txtGameCardName.Text) || string.IsNullOrEmpty(txtGameDesc.Text)
-                || string.IsNullOrEmpty(txtGamePlatform.Text) || cboProvider.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtGameCardId.Text) || string.IsNullOrWhiteSpace(txtGameCardName.Text) || string.IsNullOrWhiteSpace(txtGameDesc.Text)
+                || string.IsNullOrWhiteSpace(txtGamePlatform.Text) || cboProvider.SelectedValue == null)
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK);
                 return;
             }
 
-            if (txtGameCardName.Text.ToString().Length < 2 || txtGameCardName.Text.ToString().Length > 60)
+            if (txtGameCardName.Text.Length < 2 || txtGameCardName.Text.Length > 60)
             {
                 MessageBox.Show("Game Card Name in range (2,60) chars", "Error", MessageBoxButtons.OK);
                 return;
@@ -193,7 +197,7 @@ namespace GameCard_SE150494
             }
 
             var newGameCard = new GameCardInfo();
-            newGameCard.GameCardId = int.Parse(txtGameCardId.Text);
+            newGameCard.GameCardId = Convert.ToInt32(txtGameCardId.Text);
             newGameCard.GameCardName = txtGameCardName.Text;
             newGameCard.GameDescription = txtGameDesc.Text;
             newGameCard.GamePlatform = txtGamePlatform.Text;
@@ -211,6 +215,12 @@ namespace GameCard_SE150494
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtGameCardId.Text))
+            {
+                MessageBox.Show("ID not empty", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var gameCardOld = _gameCardService.GetAll().Where(p => p.GameCardId.Equals(int.Parse(txtGameCardId.Text))).FirstOrDefault();
 
             if (gameCardOld == null)
@@ -219,14 +229,14 @@ namespace GameCard_SE150494
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtGameCardId.Text) || string.IsNullOrEmpty(txtGameCardName.Text) || string.IsNullOrEmpty(txtGameDesc.Text)
-                || string.IsNullOrEmpty(txtGamePlatform.Text) || cboProvider.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtGameCardId.Text) || string.IsNullOrWhiteSpace(txtGameCardName.Text) || string.IsNullOrWhiteSpace(txtGameDesc.Text)
+                || string.IsNullOrWhiteSpace(txtGamePlatform.Text) || cboProvider.SelectedValue == null)
             {
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK);
                 return;
             }
 
-            if (txtGameCardName.Text.ToString().Length < 2 || txtGameCardName.Text.ToString().Length > 60)
+            if (txtGameCardName.Text.Length < 2 || txtGameCardName.Text.Length > 60)
             {
                 MessageBox.Show("Game Card Name in range (2,60) chars", "Error", MessageBoxButtons.OK);
                 return;
@@ -242,7 +252,7 @@ namespace GameCard_SE150494
 
             foreach (string word in words)
             {
-                if (!char.IsUpper(word[0]) && !char.IsDigit(word[0]))
+                if (string.IsNullOrEmpty(word) || !char.IsUpper(word[0]) && !char.IsDigit(word[0]))
                 {
                     MessageBox.Show("Each word of Game Card Name must begin with a capital letter or a digit", "Error", MessageBoxButtons.OK);
                     return;

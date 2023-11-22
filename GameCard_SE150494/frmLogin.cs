@@ -26,7 +26,6 @@ namespace GameCard_SE150494
                 manage.ShowDialog();
                
             }
-
             else
             {
                 MessageBox.Show("You have no permission to access this function", "Error", MessageBoxButtons.OK);

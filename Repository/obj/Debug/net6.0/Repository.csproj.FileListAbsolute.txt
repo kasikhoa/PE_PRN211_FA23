@@ -12,3 +12,17 @@ C:\Users\Admin\Desktop\PE_PRN211_FA23_567555_NguyenDoanAnhKhoa\Repository\obj\De
 C:\Users\Admin\Desktop\PE_PRN211_FA23_567555_NguyenDoanAnhKhoa\Repository\obj\Debug\net6.0\Repository.pdb
 C:\Users\Admin\Desktop\PE_PRN211_FA23_567555_NguyenDoanAnhKhoa\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
 C:\Users\Admin\Desktop\PE_PRN211_FA23_567555_NguyenDoanAnhKhoa\Repository\obj\Debug\net6.0\ref\Repository.dll
+D:\FU\PRN211\PE_PRN211_FA23\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\FU\PRN211\PE_PRN211_FA23\Repository\bin\Debug\net6.0\Repository.runtimeconfig.json
+D:\FU\PRN211\PE_PRN211_FA23\Repository\bin\Debug\net6.0\Repository.dll
+D:\FU\PRN211\PE_PRN211_FA23\Repository\bin\Debug\net6.0\Repository.pdb
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.dll
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.pdb
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
+D:\FU\PRN211\PE_PRN211_FA23\Repository\obj\Debug\net6.0\ref\Repository.dll
